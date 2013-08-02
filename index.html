@@ -252,8 +252,8 @@
 
             <div class="slider-wrapper theme-default">
             <div id="slider" class="nivoSlider center-mobile">
-                <img src="images/slider/roofer1.jpg" data-thumb="images/toystory.jpg" alt="Family Owned &amp; Operated" data-transition="random" />
-                <img src="images/slider/roof17.jpg" data-thumb="images/up.jpg" alt="" title="Re-Roof" data-transition="random" />
+                <img src="images/slider/roofer1.jpg" data-thumb="images/toystory.jpg" alt="Family Owned &amp; Operated" title="Family Owned &amp; Operated" data-transition="boxRandom" />
+                <img src="images/slider/roof17.jpg" data-thumb="images/up.jpg" alt="Re-Roof" title="Re-Roof" data-transition="boxRandom" />
                 <!--<img src="images/slider/walle.jpg" data-thumb="images/walle.jpg" alt="Insured &amp; Licensed" data-transition="slideInLeft" />
                 <img src="images/slider/nemo.jpg" data-thumb="images/nemo.jpg" alt="" title="#htmlcaption" />-->
             </div>
@@ -332,7 +332,7 @@
 
 
             <div class="span4 sidebar page-sidebar"><!-- Begin sidebar column -->
-            <h3 class="inner-sub-caps align-left">Additional Contact Information</h3>
+            <h3 class="inner-sub-caps align-left">Additional Information</h3>
             <address class="remove-bottom pad-bottom-half col-white">
             <strong>DellaVecchio Construction &amp; Restoration</strong><br>
 
@@ -411,7 +411,6 @@
     <script src="assets/js/bootstrap-affix.js"></script>
   	<script src="javascripts/jquery.localscroll-1.2.7-min.js"></script>
   	<script src="javascripts/jquery.scrollTo-1.4.2-min.js"></script>
-    <script src="javascripts/jquery.prettyPhoto.js"></script>
 	  <script src="javascripts/jquery.easing.1.3.js"></script>
     <script src="javascripts/jquery.isotope.min.js"></script>
     <script src="javascripts/fake-element.js"></script>
@@ -420,8 +419,6 @@
   	<script src="javascripts/scroll.js"></script>
 
     <script src="javascripts/jquery.nivo.slider.js"></script>
-    <!--<script src="javascripts/raphael.js"></script>-->
-    <!--<script src="javascripts/skill-diagram.js"></script>-->
     <script type="text/javascript">
     $(window).load(function() {
         $('#slider').nivoSlider();
@@ -443,11 +440,6 @@
 
 	<!-- Sticky nav -->
 	<script>
-
-  $(document).ready(function() {
-
-
-
 	$(document).ready(function(){
 
       //NAVIGATION MENU COLOR CHANGE ON CLILCK
@@ -458,24 +450,6 @@
         $(this).addClass(colIndex+'-link');
       })
 
-
-			//PORTFOLIO IMAGE HOVER
-			$('.element').mouseenter(function(){
-				$(this).find('img').stop().animate({opacity:'0'},'slow')
-				$(this).find('.gallery-caps').stop().animate({opacity:'1'},'slow')
-			})
-
-			$('.element').mouseleave(function(){
-				$('.element').find('.gallery-caps').stop().animate({opacity:'0'},'slow')
-				$('.element').find('img').stop().animate({opacity:'1'},'slow')
-			})
-
-			//PORTFOLIO FILTER ON CLICK
-			$('.inner-link').find('a').click(function(){
-				$('.inner-link').find('a').removeClass('.selected');
-				$(this).addClass('.selected');
-			})
-
 			//Services More Content triggering
 			$('.services-more').click(function(){
 				var servIndex = $(this).attr('data-services');
@@ -484,66 +458,8 @@
 			})
 
 		});
-	</script>
-
-	<script>
-
-// Initialize prettyPhoto plugin
-	$(".portfolio a[data-gal^='prettyPhoto']").prettyPhoto({
-		theme:'light_square',
-		autoplay_slideshow: false,
-		overlay_gallery: false,
-		show_title: true
-	});
-
-
-
-
-//MASONRY PORTFOLIO INIT:
-    $(function(){
-
-      var $container = $('#container');
-
-      $container.isotope({
-        itemSelector : '.element',
-        layoutMode : 'masonry'
-      });
-
-
-      var $optionSets = $('#options .option-set'),
-          $optionLinks = $optionSets.find('a');
-
-      $optionLinks.click(function(){
-        var $this = $(this);
-        // don't proceed if already selected
-        if ( $this.hasClass('selected') ) {
-          return false;
-        }
-        var $optionSet = $this.parents('.option-set');
-        $optionSet.find('.selected').removeClass('selected');
-        $this.addClass('selected');
-
-        // make option object dynamically, i.e. { filter: '.my-filter-class' }
-        var options = {},
-            key = $optionSet.attr('data-option-key'),
-            value = $this.attr('data-option-value');
-        // parse 'false' as false boolean
-        value = value === 'false' ? false : value;
-        options[ key ] = value;
-        if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
-          // changes in layout modes need extra logic
-          changeLayoutMode( $this, options )
-        } else {
-          // creativewise, apply new options
-          $container.isotope( options );
-        }
-
-        return false;
-      });
-
-
-    });
   </script>
+
   <script src="assets/js/jquery.fitvids.js"></script>
   <script>
     $(document).ready(function(){
