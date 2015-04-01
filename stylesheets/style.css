@@ -4,6 +4,11 @@
   }
 }
 
+/*WEBFORM*/
+#page-wrapper {
+	background: #0b9be1;
+}
+
 /*Color Swatches*/
 .col-red{
 	color: #D82546;
